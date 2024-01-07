@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BekaStore</title>
-    <!--  Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&family=Quicksand:wght@400;700&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,700&display=swap"
-      rel="stylesheet"
-    />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beka Store</title>
 
-    <!-- Feather icons -->
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+      rel="stylesheet">
+
+    <!-- Feather Icons -->
+    <!-- choose one -->
     <script src="https://unpkg.com/feather-icons"></script>
-    <!-- memudahkan saat ingin menggunkan icon dari situs, tinggal menggunkan tag <i></i> -->
-
+    <!-- <script src="js/feather.js"></script> -->
     <!-- My Style -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css">
+
   </head>
   <body>
     <!-- Navbar start-->
@@ -25,19 +26,56 @@
       <!-- Membuat nama brand dan logo di samping kiri navbar -->
       <!-- -> span: biar tulisan 'Store'nya bisa beda sama 'Beka' -->
       <a href="#home" class="navbar-logo">Beka<span>Store</span></a>
-      
+
       <div class="navbar-nav">
-        <a href="#home">Home</a>   
+        <a href="#home">Home</a>
         <a href="#about">Tentang Kami</a>
         <a href="#menu">Menu</a>
+        <a href="#products">Produk</a>
         <a href="#contact">Kontak</a>
       </div>
 
       <div class="navbar-extra">
-        <a href="#" id="search"><i data-feather="search"></i></a>
-        <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
+        <a href="#" id="search-button"><i data-feather="search"></i></a>
+        <a href="#" id="shopping-cart-button"><i data-feather="shopping-cart"></i></a>
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
       </div>
+
+      <!-- search form start -->
+      <div class="search-form">
+        <input type="search" id="search-box" placeholder="search here..." />
+        <label for="search-box"><i data-feather="search"></i></label>
+      </div>
+      <!-- search form end -->
+
+      <!-- shopping cart start -->
+      <div class="shopping-cart">
+        <div class="cart-item">
+          <img src="img/kos1.jpg" alt="product1">
+          <div class="item-detail">
+            <h3>Product 1</h3>
+            <div class="item-price">IDR 700K</div>
+          </div>
+          <i data-feather="trash-2" class="remove-item"></i>
+        </div>
+        <div class="cart-item">
+          <img src="img/kos1.jpg" alt="product1">
+          <div class="item-detail">
+            <h3>Product 1</h3>
+            <div class="item-price">IDR 700K</div>
+          </div>
+          <i data-feather="trash-2" class="remove-item"></i>
+        </div>
+        <div class="cart-item">
+          <img src="img/kos1.jpg" alt="product1">
+          <div class="item-detail">
+            <h3>Product 1</h3>
+            <div class="item-price">IDR 700K</div>
+          </div>
+          <i data-feather="trash-2" class="remove-item"></i>
+        </div>
+      </div>
+      <!-- shopping cart end -->
     </nav>
     <!-- Navbar end-->
 
@@ -45,12 +83,15 @@
     <section class="hero" id="home">
       <!-- memberi layer untuk menggelapkan background image -->
       <section class="layer">
-      <!-- alasan ada main, gar bagian section bisa diisi image dan memenuhi satu layar -->
-      <main class="content">
-        <h1>Find more <span>Affordable</span> Useful items</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, vel.</p>
-        <a href="#" class="cta">Beli Sekarang</a>
-      </main>
+        <!-- alasan ada main, gar bagian section bisa diisi image dan memenuhi satu layar -->
+        <main class="content">
+          <h1>Find more <span>Affordable</span> Useful items</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
+            vel.
+          </p>
+          <a href="#" class="cta">Beli Sekarang</a>
+        </main>
       </section>
     </section>
     <!-- Hero Section / landing End-->
@@ -61,20 +102,23 @@
 
       <div class="row">
         <div class="about-img">
-          <img src="img/tentang-kami.jpg" alt="Tentang Kami">
+          <img src="img/tentang-kami.jpg" alt="Tentang Kami" />
         </div>
 
         <div class="content">
-        <h3>Apa daya tarik kami?</h3>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia blanditiis, pariatur similique saepe eveniet facere!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis dolorem neque facere a? Optio, minima necessitatibus amet laudantium quisquam ab!
-        </p>
+          <h3>Apa daya tarik kami?</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia
+            blanditiis, pariatur similique saepe eveniet facere!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis
+            dolorem neque facere a? Optio, minima necessitatibus amet laudantium
+            quisquam ab!
+          </p>
+        </div>
       </div>
-      </div>
-    </section> 
+    </section>
     <!-- About Section End -->
 
     <!-- Menu Section Start -->
@@ -82,27 +126,28 @@
       <h2><span>Menu</span> Kami</h2>
 
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, assumenda sint. Ullam culpa voluptatem temporibus!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
+        assumenda sint. Ullam culpa voluptatem temporibus!
       </p>
 
       <div class="row">
         <div class="menu-card">
-          <img src="img/kursi1.jpg" alt="grant" class="menu-card-img">
+          <img src="img/kursi1.jpg" alt="grant" class="menu-card-img" />
           <h3 class="menu-card-title">- Grant -</h3>
           <p class="menu-card-desc">Freebies</p>
         </div>
         <div class="menu-card">
-          <img src="img/kursi1.jpg" alt="grant" class="menu-card-img">
+          <img src="img/kursi1.jpg" alt="grant" class="menu-card-img" />
           <h3 class="menu-card-title">- Grant -</h3>
           <p class="menu-card-desc">Freebies</p>
         </div>
         <div class="menu-card">
-          <img src="img/kursi1.jpg" alt="grant" class="menu-card-img">
+          <img src="img/kursi1.jpg" alt="grant" class="menu-card-img" />
           <h3 class="menu-card-title">- Grant -</h3>
           <p class="menu-card-desc">Freebies</p>
         </div>
         <div class="menu-card">
-          <img src="img/kursi1.jpg" alt="grant" class="menu-card-img">
+          <img src="img/kursi1.jpg" alt="grant" class="menu-card-img" />
           <h3 class="menu-card-title">- Grant -</h3>
           <p class="menu-card-desc">Freebies</p>
         </div>
@@ -110,29 +155,109 @@
     </section>
     <!-- Menu Section End -->
 
+    <!-- Product section start -->
+    <section class="products" id="products">
+      <h2><span>Produk</span> Kami</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
+        assumenda sint. Ullam culpa voluptatem temporibus!
+      </p>
+
+      <div class="row">
+        <div class="product-card">
+          <div class="product-icons">
+            <a href="#"><i data-feather="shopping-cart"></i></a>
+            <a href="#" class="item-detail-button"><i data-feather="eye" ></i></a>
+          </div>
+          <div class="product-image">
+            <img src="img/kos1.jpg" alt="produk"/>
+          </div>
+          <div class="product-content">
+            <h3>Kamar Kost Putri</h3>
+            <div class="product-stars">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+            </div>
+            <div class="product-price">IDR 700K <span>IDR 1.000K</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-icons">
+            <a href="#"><i data-feather="shopping-cart"></i></a>
+            <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
+          </div>
+          <div class="product-image">
+            <img src="img/kos1.jpg" alt="produk"/>
+          </div>
+          <div class="product-content">
+            <h3>Kamar Kost Putri</h3>
+            <div class="product-stars">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+            </div>
+            <div class="product-price">IDR 700K <span>IDR 1.000K</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-icons">
+            <a href="#"><i data-feather="shopping-cart"></i></a>
+            <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
+          </div>
+          <div class="product-image">
+            <img src="img/kos1.jpg" alt="produk"/>
+          </div>
+          <div class="product-content">
+            <h3>Kamar Kost Putri</h3>
+            <div class="product-stars">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+            </div>
+            <div class="product-price">IDR 700K <span>IDR 1.000K</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Product section end -->
+
     <!-- Contact Section Start -->
     <section id="contact" class="contact">
       <h2><span>Kontak</span> Kami</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, assumenda sint. Ullam culpa voluptatem temporibus!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
+        assumenda sint. Ullam culpa voluptatem temporibus!
       </p>
 
       <div class="row">
-        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d506380.8959090601!2d112.33568448009122!3d-7.454105483943282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e1a0848edcbf%3A0x3027a76e352bdf0!2sKabupaten%20Sidoarjo%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1704418799475!5m2!1sid!2sid"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe
+          class="map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d506380.8959090601!2d112.33568448009122!3d-7.454105483943282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e1a0848edcbf%3A0x3027a76e352bdf0!2sKabupaten%20Sidoarjo%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1704418799475!5m2!1sid!2sid"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
         <form action="">
           <div class="input-group">
             <i data-feather="user"></i>
-            <input type="text" placeholder="nama">
+            <input type="text" placeholder="nama" />
           </div>
           <div class="input-group">
             <i data-feather="mail"></i>
-            <input type="text" placeholder="email">
+            <input type="text" placeholder="email" />
           </div>
           <div class="input-group">
             <i data-feather="phone"></i>
-            <input type="text" placeholder="no hp">
+            <input type="text" placeholder="no hp" />
           </div>
-          <button class="btn"  type="submit">kirim pesan</button>
+          <button class="btn" type="submit">kirim pesan</button>
         </form>
       </div>
     </section>
@@ -147,21 +272,49 @@
       </div>
 
       <div class="links">
-        <a href="#home">Home</a>   
+        <a href="#home">Home</a>
         <a href="#about">Tentang Kami</a>
         <a href="#menu">Menu</a>
         <a href="#contact">Kontak</a>
       </div>
 
       <div class="credit">
-        <p>Craeted by <a href="">Mutiq A.</a>. | %copy2024.</p>
+        <p>Craeted by <a href="">Mutiq A.</a>. | &copy2024.</p>
       </div>
     </footer>
     <!-- Footer end -->
-  
+
+    <!-- Modal box item detail start  -->
+    <!-- item-modal: untuk lapisan hitam transparan -->
+    <!-- model-container: untuk memunculkan modal/pop-up -->
+    <div class="modal" id="item-detail-modal">
+      <div class="modal-container">
+          <a href="#"><i data-feather="x" class="close-icon"></i></a>
+          <div class="modal-content">
+            <!-- mengambil data dari produk -->
+            <img src="img/kos1.jpg" alt="Product">
+            <div class="product-content">
+              <h3>Product 1</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis eos odit, libero voluptate molestiae at, possimus autem cumque minus, ex voluptatibus nostrum consequatur itaque? Cupiditate?</p>
+              <div class="product-stars">
+                <i data-feather="star" class="star-full"></i>
+                <i data-feather="star" class="star-full"></i>
+                <i data-feather="star" class="star-full"></i>
+                <i data-feather="star" class="star-full"></i>
+                <i data-feather="star" class="star-full"></i>
+              </div>
+              <div class="product-price">IDR 700K <span>IDR 1.000K</span></div>
+              <!-- memasukkan ke cart -->
+              <a href="#"><i data-feather="shopping-cart"></i><span>add to cart</span></a>
+            </div>
+          </div>
+      </div>
+    </div>
+    <!-- Modal box item detail end  -->
+
     <!-- Feather icons -->
     <script>
-      feather.replace();
+     feather.replace();
     </script>
     <!-- My JS -->
     <script src="js\script.js"></script>

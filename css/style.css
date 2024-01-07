@@ -106,6 +106,97 @@ memasukkan daftar nav-menu */
   display: none;
 }
 
+/* Navbar search form */
+.navbar .search-form {
+  position: absolute;
+  top: 100%;
+  right: 7%;
+  background-color: #fff;
+  width: 20rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  /* memperkecil tinggi = 0, agar menghilang terlebih dahulu */
+  transform: scaleY(0);
+  /* untuk menentukan posros/sumbu, sehingga saat dimunculkan kita bisa animasikan seakan2 muncul dari atas */
+  transform-origin: top;
+  transition: 0.3s;
+}
+/* note: saat nama kelas berjejer dalam satu tag, janagn diberi spasi */
+.navbar .search-form.active {
+  transform: scaleY(1);
+}
+
+.navbar .search-form input {
+  height: 100%;
+  width: 100%;
+  font-size: 1.2rem;
+  color: var(--bg);
+  padding: 1rem;
+}
+
+.navbar .search-form label {
+  cursor: pointer;
+  font-size: 1rem;
+  margin-right: 1.3rem;
+  color: var(--bg);
+}
+
+/* shopping cart */
+.shopping-cart  {
+  /* karena bagian ini dimodif, bagian wadah dari shopping cart harus non-static seperti relative atau fixed */
+  position: absolute;
+  /* agar menempel di bawah navbar */
+  top: 100%;
+  right: -100%;
+  height: 100vh;
+  width: 32rem;
+  padding: 0 1.5rem;
+  color: var(--bg);
+  background-color: #fff;
+  transition: 0.5s linear;
+}
+/* untuk menuliskan 2 kelas dalam satu tag, jangan diberi spasi */
+.shopping-cart.active {
+  right: 0;
+}
+.shopping-cart .cart-item {
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed #666;
+  position: relative;
+}
+
+.shopping-cart img {
+  height: 6rem;
+  border-radius: 50%;
+}
+
+.shopping-cart h3 {
+  font-size: 1.6rem;
+  padding-bottom: 0.5rem;
+}
+
+.shopping-cart .item-price {
+  font-size: 1.2rem;
+}
+
+.shopping-cart .remove-item {
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.shopping-cart .remove-item:hover {
+  color: var(--primary);
+}
+
+
+
+/* navbar end */
 /* Hero Section */
 
 .hero {
@@ -291,6 +382,108 @@ Pseudo-element ::after digunakan untuk membuat isi (content) tambahan di dalam e
 }
 /* Menu Section End*/
 
+/* Product section start */
+/* sama denngan menu section */
+.products {
+  /* 10rem: karena ada navbar, agar tidak ketutupan perbesar nilai padding */
+  /* atas, kanan-kiri, bawah */
+  padding: 5rem 7% 1.4rem;
+}
+/* sama denngan menu section */
+.products h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  /* memperkecil jara judul dan deskripsi kecil */
+  margin-bottom: 1rem;
+}
+/* sama denngan menu section */
+.products h2 span{
+   color: var(--primary);
+}
+/* sama denngan menu section */
+.products p {
+  text-align: center;
+  max-width: 30rem;
+  margin: auto;
+  font-size: 1rem;
+  font-weight: 100;
+  line-height: 1.6rem;
+} 
+
+.products .row {
+  display: grid;
+  /* min. ukurannya / lebih kecil dari 30rem, jadikan dalam 1 kolom, jika lebih besar dari 30rem bikin semuatnya   */
+  /* akan dibuatkan kotak sebanyak mungkin dalam satu baris selama ukuran perkotaknya tidak kurangdari 30rem */
+  /* jika melebihi 30rem akan dipindahkan ke baris baru */
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+
+.products .product-card {
+  text-align: center;
+  border: 1px solid #666;
+  padding: 2rem;
+}
+
+.products .product-icons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.products .product-icons a {
+  width: 4rem;
+  height: 4rem;
+  color: #fff;
+  margin: 0.3rem;
+  border: 1px solid #666;
+  border-radius: 50%;
+  display: flex;
+  /* membuat elemen ke tengah seacara horizontal */
+  justify-content: center;
+  /* membuat elemen ke tengah secacra vertikal */
+  align-items: center;
+}
+
+.products .product-icons a:hover {
+  background-color: var(--primary);
+  border:1px solid var(--primary);
+} 
+
+.products .product-image {
+  padding: 1rem 0;
+}
+
+.products .product-image img {
+  height: 25rem;
+}
+
+.products .product-content h3 {
+  font-size: 2rem;
+}
+
+.products .product-stars {
+  font-size: 1.7rem;
+  padding: 0.8rem;
+  color: var(--primary);
+}
+
+.products .product-stars .star-full {
+  fill: var(--primary);
+}
+
+.products .product-price {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.products .product-price span {
+  text-decoration: line-through;
+  font-weight: lighter;
+  font-size: 1rem;
+}
+/* Product section end */
+
 /* Contact Section Start */
 /* sama denngan menu section */
 .contact {
@@ -409,6 +602,77 @@ footer .credit a {
 /* Footer end */
 /* Contact Section End */
 
+/* Modal box start */
+/* item detail */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 99999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-container {
+  position: relative;
+  background-color: #fefe;
+  color: var(--bg);
+  margin: 15% auto;
+  padding: 1.2rem;
+  border: 1px solid #666;
+  width: 80%;
+  height: 40%;
+  animation: animateModal 0.5s;
+}
+
+/* modal animation */
+@keyframes animateModal {
+  from{
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.modal-container .close-icon {
+  position: absolute;
+  right: 1rem;
+}
+
+.modal-content {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.modal-content img {
+  width:30%;
+  margin-bottom: 2rem;
+  margin-right: 2rem;
+
+}
+
+.modal-content p {
+  font-size: 1.2rem;
+  line-height: 1.8rem ;
+  margin-top: 1.2rem;
+}
+
+.modal-content a {
+  display: flex;
+  gap: 1rem;
+  width: 12rem;
+  background-color: var(--primary);
+  color: #fff;
+  margin-top: 1rem;
+  padding: 1rem 1.6rem ;
+}
+/* Modal box end */
 
 /* Media Queries */
 
@@ -471,6 +735,10 @@ footer .credit a {
     transform: scaleX(0.2);
   }
 
+  .navbar .search-form label {
+    font-size: 1rem;
+  }
+
   .about .row {
     flex-wrap: wrap;
   }
@@ -520,6 +788,20 @@ footer .credit a {
     padding-top: 0;
   }
 
+  .modal-content {
+    flex-wrap: wrap;
+    padding: 20px 30px;
+
+  }
+
+  .modal-container {
+    height: 70%;
+  }
+
+  .modal-content img {
+    width: 50%;
+    
+  }
   
 }
 
